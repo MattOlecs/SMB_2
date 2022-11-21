@@ -3,6 +3,8 @@
     package="mateusz.oleksik.smb_projekt_2">
 
     <permission android:name="mateusz.oleksik.SHOPPING_ITEMS_PERMISSIONS" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="mateusz.oleksik.SHOPPING_ITEMS_PERMISSIONS" />
 
     <application
@@ -21,9 +23,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name="mateusz.oleksik.smb_projekt_2.NotificationService"
-            android:enabled="true" />
+
+        <receiver
+            android:name=".ShoppingItemCreationReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="mateusz.oleksik.SHOPPING_ITEMS_PERMISSIONS">
+
+             <intent-filter>
+             <action android:name="mateusz.oleksik.SHOPPING_ITEM_INTENT" />
+             </intent-filter>
+        </receiver>
+
+        <service android:name=".NotificationsJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"/>
     </application>
 
 </manifest>

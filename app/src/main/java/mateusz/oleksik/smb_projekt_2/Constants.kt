@@ -11,5 +11,11 @@ class Constants {
 
         const val ShoppingListProjectPackage = "mateusz.oleksik.smb_projekt_1"
         const val ShoppingListProjectEditActivityClass = "mateusz.oleksik.smb_projekt_1.EditShoppingItemActivity"
+
+        const val ItemNameExtraID = "ItemName"
+        const val ItemPriceExtraID = "ItemPrice"
+        const val ItemAmountExtraID = "ItemAmount"
+        const val ItemIsBoughtExtraID = "ItemIsBought"
+        const val ItemIDExtraID = "ItemID"
     }
 }
